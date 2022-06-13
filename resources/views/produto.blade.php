@@ -1,25 +1,32 @@
-<h1>Pagina dos Produtos</h1>
+@extends('indexestructure.master')
 
-<hr>
+@section('title', 'Página de Produtos')
 
-<form action="" method="post">
-@csrf <!--parametro de segurança para o formulário que gera um tokem nas requisições -->
+@section('body')
+    <h1>Pagina dos Produtos</h1>
 
-<b>Produto</b>
-<input type="text" name="produto"><br><br>
+    <hr>
 
-<b>Categoria</b>
-<input type="text" name="categoria"><br><br>
+    <form action="" method="post">
+        @csrf
+        <!--parametro de segurança para o formulário que gera um tokem nas requisições -->
 
-<b>Preço</b>
-<input type="text" name="preco"><br><br>
+        <b>Produto</b>
+        <input type="text" name="produto"><br><br>
 
-<input type="submit" name="" id="submitCadProduto">
-   
-</form>
+        <b>Categoria</b>
+        <input type="text" name="categoria"><br><br>
 
-<hr>
+        <b>Preço</b>
+        <input type="text" name="preco"><br><br>
 
-<label for="">Produto: {{$produto??''}}</label>
-<label for="">Categoria: {{$categoria??''}}</label>
-<label for="">Preço: {{$preco??''}}</label> 
+        <input type="submit" name="" id="submitCadProduto">
+
+    </form>
+
+    <hr>
+
+    <label for="">Produto: {{ $produto ?? '' }}</label>
+    <label for="">Categoria: {{ $categoria ?? '' }}</label>
+    <label for="">Preço: {{ $preco ?? '' }}</label>
+@endsection
